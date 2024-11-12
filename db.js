@@ -10,6 +10,8 @@ const User=new Schema({
 
 const Todo=new Schema({
     userId:ObjectId,
+    //userId ek reference hai foreign key jaisa and yee whi kaam krega ....
+    //ki hm user kaa detail fetch krr paaenge .... using this foreign key.... 
     title:String,
     done:Boolean
 })

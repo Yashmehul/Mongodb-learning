@@ -29,13 +29,13 @@ app.post("/signup",async (req,res)=>{
     const email=req.body.email;
     const password=req.body.password;
     const name=req.body.name;
-    const hashedPassword=await bcrypt.hash(password,10);
     try {
         emailSchema.parse(email);
         passwordSchema.parse(password);
     } catch (error) {
         return res.status(400).json({ msg: "Invalid input data", error: error.errors });
     }
+    const hashedPassword=await bcrypt.hash(password,10);
     
 try{
    await UserModel.create({
